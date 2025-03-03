@@ -35,13 +35,17 @@ class EmpleadoController extends Controller{
             'oficina_id' => 'required|exists:oficinas,id',
             'nombre' => 'required',
             'apellido1' => 'required',
+            'apellido2' => 'required',
+            'rol' => 'required',
             'fecha_nacimiento' => 'required|date',
             'dni' => 'required|unique:empleados,dni',
             'email' => 'required|email|unique:empleados,email'
         ]);
 
+        
+
         Empleado::create($request->all());
-        return redirect()->route('empleados', ['id' => $request->oficina_id]);
+        return redirect()->route('empleados', $request->oficina_id);
     }
 
     /**
@@ -57,7 +61,7 @@ class EmpleadoController extends Controller{
      */
     public function edit(Empleado $empleado)
     {
-        //
+        return view('empleados/edit', compact('empleado'));
     }
 
     /**
@@ -65,8 +69,29 @@ class EmpleadoController extends Controller{
      */
     public function update(Request $request, Empleado $empleado)
     {
-        //
+        $request->validate([
+            'nombre' => 'required',
+            'apellido1' => 'required',
+            'apellido2' => 'required',
+            'rol' => 'required',
+            'fecha_nacimiento' => 'required|date',
+            'dni' => 'required|unique:empleados,dni,' . $empleado->id,
+            'email' => 'required|email|unique:empleados,email,' . $empleado->id
+        ]);
+    
+        $empleado->update([
+            'nombre' => $request->nombre,
+            'apellido1' => $request->apellido1,
+            'apellido2' => $request->apellido2,
+            'rol' => $request->rol,
+            'fecha_nacimiento' => $request->fecha_nacimiento,
+            'dni' => $request->dni,
+            'email' => $request->email
+        ]);
+    
+        return redirect()->route('empleados', $empleado->oficina_id);
     }
+    
 
     /**
      * Remove the specified resource from storage.

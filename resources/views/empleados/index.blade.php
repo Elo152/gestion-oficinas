@@ -17,7 +17,7 @@
                 @foreach($empleados as $empleado)
                     <div class="">
                         <p>
-                            <a href="">{{$empleado->nombre}}</a>
+                            <a href="{{ route('empleados.edit', parameters: $empleado->id)}}">{{$empleado->nombre}}</a>
                         </p>
                         <p>{{$empleado->dni}}</p>
                     </div>

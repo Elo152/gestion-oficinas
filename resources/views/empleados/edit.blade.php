@@ -18,24 +18,25 @@
     </div>
 @endif
 
-    <form action="{{ route('empleados.store') }}" method="post">
+    <form action="{{ route('empleados.update', parameters: $empleado->id) }}" method="post">
         @csrf
-        <input type="hidden" name="oficina_id" value="{{ $oficina->id }}">
+        @method('PUT')
+        
         <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" required>
+        <input type="text" name="nombre" value="{{ $empleado->nombre }}" required>
         <label for="apellido1">Primer apellido</label>
-        <input type="text" name="apellido1" required>
+        <input type="text" name="apellido1" value="{{ $empleado->apellido1 }}"required>
         <label for="apellido2">Segundo apellido</label>
-        <input type="text" name="apellido2" required>
+        <input type="text" name="apellido2" value="{{ $empleado->apellido2 }}" required>
         <label for="rol">Rol</label>
-        <input type="text" name="rol" required>
+        <input type="text" name="rol" value="{{ $empleado->rol }}" required>
         <label for="fecha">Fecha nacimiento</label>
-        <input type="date" name="fecha_nacimiento" required>
+        <input type="date" name="fecha_nacimiento" value="{{ $empleado->date }}"  required>
         <label for="dni">DNI</label>
-        <input type="text" name="dni" required>
+        <input type="text" name="dni" value="{{ $empleado->dni }}"  required>
         <label for="email">Email</label>
-        <input type="email" name="email"required>
-        <input type="submit" value="Añadir empleado">
+        <input type="email" name="email" value="{{ $empleado->email }}"  required>
+        <input type="submit" value="Editar empleado">
     </form>
 </body>
 </html>
