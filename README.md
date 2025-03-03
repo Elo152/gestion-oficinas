@@ -30,7 +30,14 @@ Este es un proyecto desarrollado en Laravel para la gestión de una red de ofici
 2.  Instalar dependencias:
 - composer install
 
-3. Configurar el archivo .env con los datos de la base de datos.
+3. Configurar el archivo .env con los datos de la base de datos:
+- Renombrar el fichero .env.example a .env
+- Modificar las propiedades de la base de datos en el archivo .env para configurar tu propia conexión
+
 4. Generar clave de la aplicación y migrar la base de datos: 
 - php artisan key:generate 
 - php artisan migrate
+
+5. Usar la aplicación 
+- Iniciar el servidor de desarrollo ejecutando el comando php artisan serve
+- Acceder a la dirección http://localhost:8000/oficinas
