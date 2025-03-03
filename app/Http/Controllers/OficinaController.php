@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Oficina;
 use Illuminate\Http\Request;
 
-class OficinaController extends Controller
-{
+class OficinaController extends Controller{
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $oficinas = Oficina::all();
+        return view('oficinas/index', compact('oficinas'));
     }
 
     /**
@@ -20,7 +20,7 @@ class OficinaController extends Controller
      */
     public function create()
     {
-        //
+        return view('oficinas/create');
     }
 
     /**
@@ -28,7 +28,8 @@ class OficinaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Oficina::create($request->all());
+        return redirect()->route('oficinas');
     }
 
     /**
