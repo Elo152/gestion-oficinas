@@ -24,7 +24,7 @@ Este es un proyecto desarrollado en Laravel para la gestión de una red de ofici
 ## 📌 Instalación y Configuración
 
 1. Clonar el repositorio:
-- git clone https://github.com/tu-usuario/gestion-oficinas.git
+- git clone https://github.com/Elo152/gestion-oficinas.git
 - cd gestion-oficinas
 
 2.  Instalar dependencias:
