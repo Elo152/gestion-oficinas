@@ -17,7 +17,7 @@
     <label for="rol">Rol</label>
     <input type="text" name="rol" value="{{ $empleado->rol }}" required>
     <label for="fecha">Fecha nacimiento</label>
-    <input type="date" name="fecha_nacimiento" value="{{ $empleado->date }}" required>
+    <input type="date" name="fecha_nacimiento" value="{{ $empleado->fecha_nacimiento }}" required>
     <label for="dni">DNI</label>
     <input type="text" name="dni" value="{{ $empleado->dni }}" required>
     <label for="email">Email</label>

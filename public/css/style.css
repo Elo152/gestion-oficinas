@@ -131,3 +131,10 @@ input[type="text"], input[type="email"], input[type="date"]  {
     background: #218838;
 }
 
+@media screen and (max-width: 768px) {
+    .card{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
