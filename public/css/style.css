@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body, h1, h2, h3, p {
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header a{
+    color: white;
+    text-decoration: none;
+}
+
+.boton-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.boton {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.boton:hover {
+    background: #218838;
+}
+
+.container-oficinas {
+    max-width: 40rem;
+    margin: 1rem auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container-empleados {
+    max-width: 30rem;
+    margin: 1rem auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.titulo{
+    margin-bottom: 1rem;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.card h3 a:hover {
+    text-decoration: underline;
+}
+
+.form-crear {
+    max-width: 25rem;
+    margin: 1rem auto;
+    background: white;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.form-crear label {
+    font-weight: bold;
+    margin-bottom: 0.3125rem;
+}
+
+input[type="text"], input[type="email"], input[type="date"]  {
+    width: 95%;
+    padding: 0.5rem;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.3125rem;
+    font-size: 1rem;
+}
+
+
+.form-crear input[type="submit"] {
+    width: 100%;
+    background: #28a745;
+    color: white;
+    padding: 0.625rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+}
+
+.form-crear input[type="submit"]:hover {
+    background: #218838;
+}
+
